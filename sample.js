@@ -18,7 +18,7 @@ let items = samplelist.sort((a,b) => {
     return 0;
 });
 
-console.log('------------昇順並べ替え-----------')
+console.log('------------降順並べ替え-----------')
 items.map((item,index) => {
     console.log(item);
 });
@@ -32,7 +32,7 @@ let items2 = samplelist.sort((a,b) => {
     return 0;
 });
 
-console.log('------------降順並べ替え-----------')
+console.log('------------昇順並べ替え-----------')
 items2.map((item,index) => {
     console.log(item);
 });
