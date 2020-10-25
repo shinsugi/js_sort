@@ -9,7 +9,7 @@
     - サンプルコード
         - コマンドラインで以下を実行
         ~~~
-        ndoe sample.js
+        node sample.js
         ~~~
 
     - サンプルアプリ
