@@ -5,3 +5,18 @@
   border-width: 1px;
   border-color: black;
 }
+
+.test {
+  padding: 8px;
+  border-radius: 30px;
+  border-width: 1px;
+  margin: 3px;
+  outline: 0px;
+}
+
+.selected {
+  background-color: aquamarine;
+}
+.h:hover {
+  background-color: aquamarine;
+}

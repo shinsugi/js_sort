@@ -6,7 +6,10 @@ class template extends React.Component {
   constructor(props){
     super(props);
     this.state = {
-      list: undefined
+      list: undefined,
+      status: undefined,
+      buttonselected: '',
+      dis: false
     }
   }
 
@@ -22,7 +25,7 @@ class template extends React.Component {
     ];
     this.setState({
       list : samplelist,
-      status : '初期状態'
+      status : '初期状態',
     });
   }
 
@@ -60,6 +63,27 @@ class template extends React.Component {
     });
   }
   
+  //ボタンをクリック
+  buttonClick(name){
+    this.setState({
+      buttonselected: name
+    });
+  }
+
+  //活性非活性きりかえ
+  toggle(){
+    if(!this.state.dis){
+      this.setState({
+        dis : !this.state.dis,
+        buttonselected : ''
+      });
+    }else{
+      this.setState({
+        dis : !this.state.dis,
+      });
+    }
+
+  }
   render(){
     return (
       <div style={{padding:10}}>
@@ -79,6 +103,36 @@ class template extends React.Component {
               </div>
             )
         })}
+
+        <h3>HOVER SAMPLE</h3>
+        <div>
+          disableの間はhoverが動かないようにする
+        </div>
+        <button onClick={() => {this.toggle()}}>切替</button>
+        <div>
+          <button 
+            disabled={this.state.dis}
+            className={
+              this.state.dis ? 'test' :
+              this.state.buttonselected === 'test1' ? 'test selected' : 'test h'
+            } 
+            onClick={() => {this.buttonClick('test1')}}>test1</button>
+          <button 
+            disabled={this.state.dis}
+            className={
+              this.state.dis ? 'test' :
+              this.state.buttonselected === 'test2' ? 'test selected' : 'test h'
+            } 
+            onClick={() => {this.buttonClick('test2')}}>test2</button>
+          <button 
+            disabled={this.state.dis}
+            className={
+              this.state.dis ? 'test' :
+              this.state.buttonselected === 'test3' ? 'test selected' : 'test h'
+            } 
+            onClick={() => {this.buttonClick('test3')}}>test3</button>
+        </div>
+        
       </div>
     )
   }
