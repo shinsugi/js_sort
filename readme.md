@@ -16,6 +16,7 @@
         - コマンドラインで以下を実行
         ~~~
         cd my-app
+        npm install
         npm start
         //もしかするとmacだと起動しないかも...
         ~~~
